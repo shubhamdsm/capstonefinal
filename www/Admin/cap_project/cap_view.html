@@ -1,0 +1,78 @@
+<!DOCTYPE>
+<html>
+<html lang="en">
+<head>
+  <title>COURSES</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron">
+  <h1>HElLO ADMIN!</h1>      
+  <p>Manage your courses here.</p>
+</div>
+
+
+
+
+<div class="container">
+    <div class="container">
+    	<div class="col">
+    		
+    	</div>
+    </div>
+
+    
+    	<div class="col-xs-3" style="text-align: center;">
+
+    	<div class="list-group">
+    		<a href="cap_view.html" class="list-group-item active">My course</a>
+    		<a href="cap_insert_course.html" class="list-group-item ">Add courses</a>
+    		<a href="cap_user_view.html" class="list-group-item ">View users</a>
+    		<a href="cap_delete_course.html" class="list-group-item ">delete courses</a>
+    		<a href="delete_food_items.php" class="list-group-item">purchases</a>
+      
+    	</div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+
+<div class="container">
+  <h2>Hover Rows</h2>    
+  <table class="table table-hover">
+    <thead >
+      <tr>
+        <th>institute_name</th>
+        <th>course_category</th>
+        <th>course_name</th>
+		<th>location</th>
+		<th>institute_link</th>
+      </tr>
+    </thead>
+	<?php 
+	$con = mysqli_connect('localhost','root','','cap') or die("unable to connect");
+	$query = "select *from course_details";
+	$result = mysqli_query($con,$query);
+       while($row = mysqli_fetch_array($result)){	
+    
+        echo $row['institute_name']; 
+       echo $row['course_category'];
+      echo $row['course_name']; 
+	echo $row['location']; 
+		echo $row['institute_link']; 
+      
+	 } ?>
+  </table>
+</div>
+
+</body>
+</html>
